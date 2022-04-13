@@ -3,40 +3,22 @@
 name: CI
 
 # Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-
-
+on: push
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   dockerize-on-mtrain :
-
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v3
-      - name: Clone My Repo
-        run: git clone https://github.com/tmsk0711/github-actions-tutorial
-#       - name: run python file
-#         run: python github-actions-tutorial/hellowolrd.py
+#       - name: Clone My Repo
+#         run: git clone https://github.com/tmsk0711/github-actions-tutorial
+#      - name: run python file
+#        run: python github-actions-tutorial/hellowolrd.py
       - name: print ls
         run: ls
         
       - name: print pwd
         run: pwd
-#       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-#       - uses: actions/checkout@v3
-
-#       # Runs a single command using the runners shell
-#       - name: Run a one-line script
-#         run: echo Hello, world!
-
-#       # Runs a set of commands using the runners shell
-#       - name: Run a multi-line script
-#         run: |
-#           echo Add other actions to build,
-#           echo test, and deploy your project.
