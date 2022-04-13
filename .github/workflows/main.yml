@@ -23,8 +23,8 @@ jobs:
       - uses: actions/checkout@v3
       - name: Clone My Repo
         run: git clone https://github.com/tmsk0711/github-actions-tutorial
-      - name: run python file
-        run: python github-actions-tutorial/hellowolrd.py
+#       - name: run python file
+#         run: python github-actions-tutorial/hellowolrd.py
       - name: print ls
         run: ls
         
