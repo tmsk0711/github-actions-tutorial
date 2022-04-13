@@ -23,7 +23,7 @@ jobs:
       - name: Clone My Repo
         run: git clone https://github.com/tmsk0711/github-actions-tutorial
       - name: run python file
-        run: Run python github-actions-tutorial/hellowolrd.py
+        run: python github-actions-tutorial/hellowolrd.py
       - name: print ls
         run: ls
         
