@@ -24,4 +24,4 @@ jobs:
         run: pwd
         
       - name: Run Python File
-        run: python hello.py # hello.py 실행
+        run: python helloworld.py # hello.py 실행
