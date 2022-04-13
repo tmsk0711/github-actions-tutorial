@@ -1,0 +1,23 @@
+name: dockerize-on-mtrain
+
+on:
+  push:
+    paths:
+      - mnist_train/**
+      - .github/workflows/dockerize.yml # yaml이 변경될 때도 workflow 실행되게
+jobs:
+  dockerize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Docker Login
+        uses: docker/login-action@v1.14.1
+        with:
+          username: tmsk0711
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          
+      - name: Docker build
+        run: docker build -t tmsk0711/mtrain mnist_train
+      - name: Docker push
+        run: docker push tmsk0711/mtrain 
+        # 1
